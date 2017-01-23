@@ -2,14 +2,6 @@
 
 <h1>My wonderful weblog</h1>
 
-<% @posts.reverse.each do |post| %>
-  <div>
-    <h2><%= link_to post.title, post %></h2>
-    <p><%= simple_format(post.body, sanitize: false) %></p>
-    <small><%= post.created_at.to_s(:long) %>
-      (<%= link_to 'Edit', edit_post_path(post) %>)
-    </small>
-  </div>
-<% end %>
+<%= render @posts.reverse %>
 
 <%= link_to 'New Post', new_post_path %>

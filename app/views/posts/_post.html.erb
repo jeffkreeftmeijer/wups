@@ -1,0 +1,7 @@
+<div>
+  <h2><%= link_to post.title, post %></h2>
+  <p><%= simple_format(post.body, sanitize: false) %></p>
+  <small><%= post.created_at.to_s(:long) %>
+    (<%= link_to 'Edit', edit_post_path(post) %>)
+  </small>
+</div>
